@@ -1,0 +1,46 @@
+/* Her oprettet vi vores canvas */
+function setup() {
+    createCanvas(512, 512);
+    fill(255, 0, 0);
+  }
+
+/*Her tjekker vi om vi rammer boarderen af vores canvas*/
+function borderCheck() {
+if (x + d / 2 >= width) {
+    a = -speed;
+    b = 0;
+}
+if (x - d / 2 <= 0) {
+    a = speed;
+    b = 0;
+}
+if (y + d / 2 >= height) {
+    a = 0;
+    b = -speed;
+}
+if (y - d / 2 < 0) {
+    a = 0;
+    b = speed;
+}
+}
+
+/*Her opretter vi en function som registrere når vi klikker på en kanp fra vores tastatur */
+function keyPressed() {
+    /*Keycode bruges når man kalder en tast fra sit tastatur */
+if (keyCode === DOWN_ARROW) {
+b = speed;
+a = 0;
+}
+if (keyCode === UP_ARROW) {
+b = -speed;
+a = 0;
+}
+if (keyCode === LEFT_ARROW) {
+b = 0;
+a = -speed;
+}
+if (keyCode === RIGHT_ARROW) {
+b = 0;
+a = speed;
+}
+}
